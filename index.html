@@ -15,7 +15,13 @@
     <!-- header  -->
     <header>
         <div class="logo">Rudra Books</div>
-        <button class="login-header-button" onclick="window.location.href='login.html'">Login</button>
+        <div class="profile-badge" onclick="toggleDropdown(event)">
+            <img src="https://i.pinimg.com/736x/30/d4/f7/30d4f732f95a0e35806a92a4faa6e009.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="dropdown-content">
+                <a href="profile.html">Profile</a>
+                <a href="logout.html">Log Out</a>
+            </div>
+        </div>
         <div class="heading">Discover Your Next Great Read</div>
     </header>
 
@@ -46,7 +52,7 @@
     <!-- Footer -->
     <footer>
         <div>
-            <a href="contact.html">Contact Us</a> | 
+            <a href="contact.html">Contact Us</a> |
             <a href="help.html">Help</a>
         </div>
         <div class="social-icons">
@@ -61,5 +67,37 @@
             </a>
         </div>
     </footer>
+
+    <script>
+    const profileBadge = document.querySelector('.profile-badge');
+    const loginContainer = document.querySelector('.login-container');
+
+    profileBadge.addEventListener('click', () => {
+        // Toggle the display of the login box
+        if (loginContainer.style.display === 'block') {
+            loginContainer.style.display = 'initial';
+            loginContainer.style.top = '130px';
+        } else {
+            loginContainer.style.display = 'block';
+            loginContainer.style.top = '180px';
+        }
+    });
+
+        function toggleDropdown(event) {
+            const dropdown = event.currentTarget.querySelector('.dropdown-content');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>

@@ -34,6 +34,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1.6px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    flex-grow: 1;
 }
 
 .search-container {
@@ -128,7 +129,8 @@ body {
     z-index: 1000;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    display: block;
+    display: initial;
+    transition: top 0.3s ease;
 }
 
 .login-title {
@@ -305,7 +307,7 @@ footer .social-icons a {
     color: white;
     border: none;
     border-radius: 25px;
-    /* cursor: pointer; */
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
@@ -314,3 +316,45 @@ footer .social-icons a {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.profile-badge {
+    position: absolute;
+    right: 5%;
+    top: 15px;
+    display: inline-block;
+    cursor: pointer;
+    width: 70px; /* Increased width */
+    height: 70px; /* Increased height */
+    margin-right: 0; /* Remove right margin  */   
+}
+
+.profile-pic {
+    width: 100%; /* Make the image fill the badge */
+    height: 100%; /* Make the image fill the badge */
+    border-radius: 50%; /* Keeps it circular */
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(134, 134, 56);
+    color: white;
+}
+
