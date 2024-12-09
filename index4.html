@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rudra</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- header  -->
+    <header>
+        <div class="logo">Rudra Books</div>
+        <button class="login-header-button" onclick="window.location.href='login.html'">Login</button>
+        <div class="heading">Discover Your Next Great Read</div>
+    </header>
+
+    <!-- main -->
+    <main>
+        <div class="search-container">
+            <form action="{% url 'result' %}" method="GET" class="d-flex" style="width: 100%;">
+                <input type="text" name="query" class="search-bar" placeholder="Search for books...">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i> FIND
+                </button>
+            </form>
+        </div>
+        <div class="login-container">
+            <div class="login-title">Login</div>
+            <button class="google-login-button">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAvVBMVEVHcEz8/f3////////+/v7s7u/6+vr5+vr5+vr9/f3////////5+vr////////Kzs/////////9/v74+fn4+fn////8vwbsTkJFiPPrQjI7q1gpp00yqVPrSTlAhfX9/f2hv/nwgHj2tLGt2bkqe/Q2gPV+qPd7woza5f2WuPns8v5ZtnHD48n92Yj80Wn+6sD4yMXtZ13znpn8xSnwuh3v6+WIwbFwoPb0qKPpKxT1mx7AtydjuXgcpjNCk8nTYqeQAAAAFXRSTlMA5d2fnApdnVLJpWJiowsJZNGXl5g9ng+vAAABP0lEQVQokY2S2XqCMBCFQVGWulRbkIRABASK0FZtq3Z9/8fqZCDK0oueCzJf/sxhJhlF+Z/G1kJVF9a4T2ZD+6LhrM1u7ZZumsyyO5pe2RQ3+O4Qhoddbd32jHzigwiJms4jTAvJqtb7GekIoSbC0F+tCNnvCSFhZawhRE/I84UfP4eyKMEMEXxA3lunYqN2fXZe/ajbjvA1YX10HIeLjXyNyrcQmwAHsD45zgue3gSozQPEgx50UYmELdtTmqYngNJ2WRVEY1nIOnATsS5lK5+MenUr28ANUtmKIvxij1KGuaUbuFgPxxvSxd4Xo9TzisLz2E+SS1e4eCylgFzK4Aj7PuJLVBevTPBfMSQxBp+qsol8UK167DLLsmNZlaVfR0Hv3muDwVjyJuKd8ZzrF8z1eX90jXtTVc07o0/+1C9hwDM1yvfWEgAAAABJRU5ErkJggg=="
+                    alt="Google logo" class="google-icon">
+                Sign in with Google
+            </button>
+            <button class="apple-login-button">
+                <i class="fab fa-apple"></i>
+                Sign in with Apple
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="contact.html">Contact Us</a> | 
+            <a href="help.html">Help</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
