@@ -362,4 +362,40 @@ footer .social-icons a {
     background-color: rgb(134, 134, 56);
     color: white;
 }
+.quick-links {
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.quick-links h3 {
+    font-size: 40px;
+    color: rgb(134, 134, 56);
+}
+
+.quick-links ol {
+    padding: 0;
+    flex-grow: 1;
+}
+
+.quick-links li {
+    margin: 10px 40px; 
+    list-style-type: disc;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: rgb(134, 134, 56);
+    font-weight: bold;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .quick-links{
+        display: none;
+    }    
+}

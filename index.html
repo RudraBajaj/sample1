@@ -45,6 +45,25 @@
             </form>
         </div>
 
+        <!-- New Quick Links Section -->
+        <div class="quick-links">
+            <h3>Popular Searches</h3>
+            <ol>
+                <li><a href="search.html?query=fiction">Fiction</a></li>
+                <li><a href="search.html?query=non-fiction">Non-Fiction</a></li>
+                <li><a href="search.html?query=mystery">Mystery</a></li>
+                <li><a href="search.html?query=sci-fi">Sci-Fi</a></li>
+                <li><a href="search.html?query=biography">Biography</a></li>
+                <li><a href="search.html?query=romance">Romance</a></li>
+                <li><a href="search.html?query=thriller">Thriller</a></li>
+                <li><a href="search.html?query=horror">Horror</a></li>
+                <li><a href="search.html?query=history">History</a></li>
+                <li><a href="search.html?query=science">Science</a></li>
+                <li><a href="search.html?query=poetry">Poetry</a></li>
+                <li><a href="search.html?query=children">Children</a></li>
+            </ol>
+        </div>
+
         <!-- login container -->
         <div class="login-container">
             <div class="login-title">Login</div>
@@ -84,14 +103,17 @@
         const profileBadge = document.querySelector('.profile-badge');
         const loginContainer = document.querySelector('.login-container');
 
-        profileBadge.addEventListener('click', () => {
-            if (window.innerWidth > 1290) {
-                if (loginContainer.style.display === 'block') {
-                    loginContainer.style.display = 'initial';
-                    loginContainer.style.top = '130px';
-                } else {
-                    loginContainer.style.display = 'block';
-                    loginContainer.style.top = '180px';
+        profileBadge.addEventListener('click', (event) => {
+            // Check if the click is on the profile badge itself
+            if (event.target === profileBadge || event.target.matches('.profile-pic')) {
+                if (window.innerWidth > 1290) {
+                    if (loginContainer.style.display === 'block') {
+                        loginContainer.style.display = 'initial';
+                        loginContainer.style.top = '130px';
+                    } else {
+                        loginContainer.style.display = 'block';
+                        loginContainer.style.top = '180px';
+                    }
                 }
             }
         });
@@ -103,7 +125,7 @@
 
         // Close the dropdown if the user clicks outside of it
         window.onclick = function (event) {
-            if (!event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
+            if (window.innerWidth > 900 && !event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
                 const dropdowns = document.getElementsByClassName("dropdown-content");
                 
                 for (let i = 0; i < dropdowns.length; i++) { 
@@ -113,7 +135,8 @@
                 loginContainer.style.display = 'initial';
                 loginContainer.style.top = '130px'; // Reset to initial position
             }
-        } </script>
+        } 
+    </script>
 </body>
 
 </html>
