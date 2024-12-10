@@ -96,7 +96,13 @@
         window.onclick = function (event) {
             if (!event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
                 const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) { dropdowns[i].style.display = "none"; }
+                
+                for (let i = 0; i < dropdowns.length; i++) { 
+                    dropdowns[i].style.display = "none"; 
+                }
+                // Reset the login container position when dropdown is closed
+                loginContainer.style.display = 'initial';
+                loginContainer.style.top = '130px'; // Reset to initial position
             }
         } </script>
 </body>
