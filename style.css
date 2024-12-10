@@ -327,6 +327,11 @@ footer .social-icons a {
     height: 70px; /* Increased height */
     margin-right: 0; /* Remove right margin  */   
 }
+@media (max-width: 900px){
+    .profile-badge{
+        top: 10px;
+    }
+}
 
 .profile-pic {
     width: 100%; /* Make the image fill the badge */

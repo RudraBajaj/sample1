@@ -16,7 +16,8 @@
     <header>
         <div class="logo">Rudra Books</div>
         <div class="profile-badge" onclick="toggleDropdown(event)">
-            <img src="https://i.pinimg.com/736x/30/d4/f7/30d4f732f95a0e35806a92a4faa6e009.jpg" alt="Profile Picture" class="profile-pic">
+            <img src="https://i.pinimg.com/736x/30/d4/f7/30d4f732f95a0e35806a92a4faa6e009.jpg" alt="Profile Picture"
+                class="profile-pic">
             <div class="dropdown-content">
                 <a href="profile.html">Profile</a>
                 <a href="logout.html">Log Out</a>
@@ -56,35 +57,35 @@
             <a href="help.html">Help</a>
         </div>
         <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank">
+            <a href="https://www.facebook.com/rudra.bajaj.58" target="_blank">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.twitter.com" target="_blank">
-                <i class="fab fa-twitter"></i>
+            <a href="https://www.linkedin.com/in/rudra-bajaj-39509928b/" target="_blank">
+                <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com" target="_blank">
+            <a href="https://www.instagram.com/rudra_bajaj21/" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
     </footer>
 
     <script>
-    const profileBadge = document.querySelector('.profile-badge');
-    const loginContainer = document.querySelector('.login-container');
+        const profileBadge = document.querySelector('.profile-badge');
+        const loginContainer = document.querySelector('.login-container');
 
-    profileBadge.addEventListener('click', () => {
-        // Check if the screen width is greater than 768px
-        if (window.innerWidth > 1290) {
-            // Toggle the display of the login box
-            if (loginContainer.style.display === 'block') {
-                loginContainer.style.display = 'initial';
-                loginContainer.style.top = '130px';
-            } else {
-                loginContainer.style.display = 'block';
-                loginContainer.style.top = '180px';
+        profileBadge.addEventListener('click', () => {
+            // Check if the screen width is greater than 768px
+            if (window.innerWidth > 1290) {
+                // Toggle the display of the login box
+                if (loginContainer.style.display === 'block') {
+                    loginContainer.style.display = 'initial';
+                    loginContainer.style.top = '130px';
+                } else {
+                    loginContainer.style.display = 'block';
+                    loginContainer.style.top = '180px';
+                }
             }
-        }
-    });
+        });
 
         function toggleDropdown(event) {
             const dropdown = event.currentTarget.querySelector('.dropdown-content');
@@ -92,15 +93,12 @@
         }
 
         // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (!event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
                 const dropdowns = document.getElementsByClassName("dropdown-content");
-                for (let i = 0; i < dropdowns.length; i++) {
-                    dropdowns[i].style.display = "none";
-                }
+                for (let i = 0; i < dropdowns.length; i++) { dropdowns[i].style.display = "none"; }
             }
-        }
-    </script>
+        } </script>
 </body>
 
 </html>
