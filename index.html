@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="google-signin-client_id"
+        content="435055067148-5e6dqtgnjoif0j8m9ql9ivbdp8cum5b6.apps.googleusercontent.com">
     <title>Rudra</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
@@ -49,29 +51,31 @@
         <div class="quick-links" ">
             <h3>Popular Searches</h3>
             <ol>
-                <li><a href="search.html?query=fiction">Fiction</a></li>
-                <li><a href="search.html?query=non-fiction">Non-Fiction</a></li>
-                <li><a href="search.html?query=mystery">Mystery</a></li>
-                <li><a href="search.html?query=sci-fi">Sci-Fi</a></li>
-                <li><a href="search.html?query=biography">Biography</a></li>
-                <li><a href="search.html?query=romance">Romance</a></li>
-                <li><a href="search.html?query=thriller">Thriller</a></li>
-                <li><a href="search.html?query=horror">Horror</a></li>
-                <li><a href="search.html?query=history">History</a></li>
-                <li><a href="search.html?query=science">Science</a></li>
-                <li><a href="search.html?query=poetry">Poetry</a></li>
-                <li><a href="search.html?query=children">Children</a></li>
+                <li><a href=" search.html?query=fiction">Fiction</a></li>
+            <li><a href="search.html?query=non-fiction">Non-Fiction</a></li>
+            <li><a href="search.html?query=mystery">Mystery</a></li>
+            <li><a href="search.html?query=sci-fi">Sci-Fi</a></li>
+            <li><a href="search.html?query=biography">Biography</a></li>
+            <li><a href="search.html?query=romance">Romance</a></li>
+            <li><a href="search.html?query=thriller">Thriller</a></li>
+            <li><a href="search.html?query=horror">Horror</a></li>
+            <li><a href="search.html?query=history">History</a></li>
+            <li><a href="search.html?query=science">Science</a></li>
+            <li><a href="search.html?query=poetry">Poetry</a></li>
+            <li><a href="search.html?query=children">Children</a></li>
             </ol>
         </div>
 
         <!-- login container -->
         <div class="login-container">
             <div class="login-title">Login</div>
+
             <div class="google-login-button" onclick="location.href='login.html'">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAvVBMVEVHcEz8/f3////////+/v7s7u/6+vr5+vr5+vr9/f3////////5+vr////////Kzs/////////9/v74+fn4+fn////8vwbsTkJFiPPrQjI7q1gpp00yqVPrSTlAhfX9/f2hv/nwgHj2tLGt2bkqe/Q2gPV+qPd7woza5f2WuPns8v5ZtnHD48n92Yj80Wn+6sD4yMXtZ13znpn8xSnwuh3v6+WIwbFwoPb0qKPpKxT1mx7AtydjuXgcpjNCk8nTYqeQAAAAFXRSTlMA5d2fnApdnVLJpWJiowsJZNGXl5g9ng+vAAABP0lEQVQokY2S2XqCMBCFQVGWulRbkIRABASK0FZtq3Z9/8fqZCDK0oueCzJf/sxhJhlF+Z/G1kJVF9a4T2ZD+6LhrM1u7ZZumsyyO5pe2RQ3+O4Qhoddbd32jHzigwiJms4jTAvJqtb7GekIoSbC0F+tCNnvCSFhZawhRE/I84UfP4eyKMEMEXxA3lunYqN2fXZe/ajbjvA1YX10HIeLjXyNyrcQmwAHsD45zgue3gSozQPEgx50UYmELdtTmqYngNJ2WRVEY1nIOnATsS5lK5+MenUr28ANUtmKIvxij1KGuaUbuFgPxxvSxd4Xo9TzisLz2E+SS1e4eCylgFzK4Aj7PuJLVBevTPBfMSQxBp+qsol8UK167DLLsmNZlaVfR0Hv3muDwVjyJuKd8ZzrF8z1eX90jXtTVc07o0/+1C9hwDM1yvfWEgAAAABJRU5ErkJggg=="
                     alt="Google logo" class="google-icon">
                 Sign in with Google
             </div>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <button class="apple-login-button">
                 <i class="fab fa-apple"></i>
                 Sign in with Apple
@@ -99,7 +103,18 @@
         </div>
     </footer>
 
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
+
+        // sign out 
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
         const profileBadge = document.querySelector('.profile-badge');
         const loginContainer = document.querySelector('.login-container');
 
@@ -127,9 +142,9 @@
         window.onclick = function (event) {
             if (window.innerWidth > 1290 && !event.target.matches('.profile-badge') && !event.target.matches('.profile-pic')) {
                 const dropdowns = document.getElementsByClassName("dropdown-content");
-                
-                for (let i = 0; i < dropdowns.length; i++) { 
-                    dropdowns[i].style.display = "none"; 
+
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
                 }
                 // Reset the login container position when dropdown is closed
                 loginContainer.style.display = 'initial';
