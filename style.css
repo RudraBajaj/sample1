@@ -363,6 +363,7 @@ footer .social-icons a {
 }
 .quick-links {
     margin: 20px 0; /* Removed right margin */
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Changed from space-between to flex-start */
