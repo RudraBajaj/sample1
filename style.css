@@ -294,7 +294,6 @@ footer .social-icons a {
     .login-container {
         display: none;
     }
-
 }
 
 .login-header-button {
@@ -363,10 +362,24 @@ footer .social-icons a {
     color: white;
 }
 .quick-links {
-    margin: 20px 20px;
+    margin: 20px 0; /* Removed right margin */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changed from space-between to flex-start */
+    position: relative;
+    width: fit-content; /* Added to make the box width fit its content */
+    padding-right: 40px; /* Added extra space after the word */
+}
+
+.quick-links::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 15px;
+    height: 92%;
+    width: 3px;
+    background-color: rgb(134, 134, 56);
 }
 
 .quick-links h3 {
@@ -394,8 +407,9 @@ footer .social-icons a {
     text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .quick-links{
         display: none;
     }    
 }
+
